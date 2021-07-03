@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Timer</h1>
-    <button id="button" style="font-size:3em">　　　　　</button>
+    <button id="button" style="font-size:3em">スタート</button>
     <div id="time" style="font-size:10em">0.00</div>
     <div id="0" style="font-size:3em">0.00</div>
     <div id="1" style="font-size:3em">0.00</div>
@@ -29,6 +29,7 @@
                 if (start == 0) {
                     start = 1;
                     time = 0;
+                    button.innerHTML = "ストップ";
                     set = setInterval(play, 10);
                 }
                 else if (start == 1) {
@@ -44,11 +45,12 @@
                     for (var a = 0; a <= 4; a++) {
                        document.getElementById(p[a]).innerHTML =  point[a];
                     }
+                    button.innerHTML = "リセット";
                 }
                 else if (start == 2) {
                     start = 0;
                     document.getElementById("time").innerHTML = "0.00";
-                    
+                    button.innerHTML = "スタート";
                 }
             
         })
